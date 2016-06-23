@@ -17,6 +17,7 @@ def main():
             port=dict(default=22, required=False),
             username=dict(required=True),
             password=dict(required=True),
+            key_file=dict(required=False),
             source_file=dict(required=True),
             dest_file=dict(required=True),
             dest_file_system=dict(required=False, default='flash:'),
@@ -31,6 +32,7 @@ def main():
         'ip': module.params['host'],
         'username': module.params['username'],
         'password': module.params['password'],
+        'key_file': module.params['key_file'],
         'port': int(module.params['port']),
         'verbose': False,
     }
